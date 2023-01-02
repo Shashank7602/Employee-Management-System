@@ -1,5 +1,10 @@
 # Employee Management System
-FullStack with Static Webpage and fully funcional Backend
+<h2>FullStack with Static Webpage and fully funcional Backend</h2>
+<h3>To Start the Database: </h3>
+<p>Open terminal in the file folder</p>
+<p>Input Command "nodemon app.js" &emsp; &ensp; // Node js must be installed on your System</p>
+<img src = 'https://user-images.githubusercontent.com/83777126/210251693-a7499292-cbef-4c39-93b2-27a8e1b1ee4a.png'>
+<p>Click on the Localhost Link to open the website</p>
 <h3>Screenshots</h3>
 <img src='https://user-images.githubusercontent.com/83777126/210249129-4ea1d4bd-2bd8-4e54-a4b8-91d7be0a5c50.png'>
 <h4>Admin Login</h4>
