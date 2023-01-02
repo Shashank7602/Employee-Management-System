@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="style.css">
+
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="form-title text-center">
+            <h2 class="text-dark">Departments</h2>
+            </div>
+           
+<button class="button-54" role="button" onclick="location.href='/department'">New Department</button>
+
+        <div class="container mt-0 card" >
+            <!-- form handling -->
+            <form action="/department" method="POST">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Dept. Name</th>
+                            <th scope="col">Dept. Short Name</th>
+                            <th scope="col">Dept. Code</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('layouts/show_dept') %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>

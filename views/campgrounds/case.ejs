@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CGRF</title>
+</head>
+<link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    /*navbar Starts*/
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+	width: 10em;
+	letter-spacing: 2px;
+  }
+  
+  .dropdown {
+	float: left;
+	overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+	cursor: pointer;
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+	width: 12em;
+	letter-spacing: 2px;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: rgb(224, 93, 93);
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+	background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+
+  .active1{
+    background-color: red;
+  }
+
+    /*other parts including header footer*/
+  body {
+    background: url(../images/bg-body.jpg) repeat;
+    color: #41545bd5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    min-width: 940px;
+    padding: 0;
+  }
+  h1{
+    text-align: center;
+    margin-top: 10%;
+  }
+  a {
+    outline: none;
+  }
+  img {
+    border: 0;
+  }
+  p {
+    margin: 0;
+    text-align: justify;
+  }
+  p a {
+    color: #356618;
+  }
+  p a:hover {
+    color: #66a143;
+  }
+  #page {
+    background: #18565e;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 900px;
+  }
+  #header {
+    background: #ffffff;
+  }
+  #header a#logo {
+    display: block;
+    height: 86px;
+    padding: 15px 0 0 20px;
+  }
+  #header a#logo img {
+    display: block;
+    margin: 0 auto;
+  }
+  #header > ul {
+    background: #4b4b4b;
+    height: 49px;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 900px;
+  }
+  #header > ul > li {
+    float: left;
+    position: relative;
+    width: 150px;
+  }
+  #header > ul > li > a {
+    color: #f0f2c9;
+    display: block;
+    letter-spacing: 0.1em;
+    line-height: 49px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  #body {
+    background: #ffffff;
+    /*background-repeat: no-repeat;*/
+  }
+  
+  #body div.header div a img:hover,
+  #body div.header ul li a.figure img:hover,
+  #body div.body ul li a img:hover {
+    filter: alpha(opacity=90);/* Needed for IE8 and old versions */
+    opacity: 0.9;
+  }
+  #body div.header div div {
+    background: url(../images/bg-description.png) repeat-x;
+    height: 75px;
+    bottom: 0;
+    position: absolute;
+    padding: 17px 20px;
+    left: 0;
+    width: auto;
+  }
+  #body div.header div div h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  #body div.header div div h1 a {
+    color: #e3e699;
+    text-decoration: none;
+  }
+  #body div.header div div h1 a:hover {
+    color: #ffffff;
+  }
+  #body div.header div div p {
+    color: #ffffff;
+    letter-spacing: 0.028em;
+    line-height: 24px;
+  }
+  #body div.header div div p a.continue {
+    background: url(../images/interface.png) no-repeat -400px 0;
+    display: inline-block;
+    height: 20px;
+    left: 3px;
+    position: relative;
+    top: 5px;
+    width: 20px;
+  }
+  #body div.header div div p a.continue:hover {
+    background: url(../images/interface.png) no-repeat -400px -20px;
+  }
+  #body div.header ul {
+    background: #356618;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  #body div.header ul li {
+    background: url(../images/separator1.png) repeat-y;
+    float: left;
+    overflow: hidden;
+    padding: 9px 20px 7px 0;
+    width: auto;
+  }
+  #body div.header ul li:first-child {
+    background: none;
+  }
+  #body div#content ul.section li img,
+  #body div.header ul li a.figure {
+    display: block;
+    float: left;
+  }
+  #body div.header ul li a.figure img {
+    display: block;
+    border: 1px solid #ffffff;
+    margin: 0 20px 0;
+  }
+  
+  
+  #body div.body ul {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 21px 0;
+  }
+  #body div.body ul li {
+    float: left;
+    margin: 0 0 0 20px;
+    width: 200px;
+  }
+  
+  #body div.body ul li h2 {
+    color: #836145;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    padding: 24px 0 10px;
+    text-transform: uppercase;
+  }
+  #body div.body ul li p {
+    color: #4b4b4b;
+    letter-spacing: 0.028em;
+    line-height: 24px;
+    text-align: left;
+  }
+  #body div.footer {
+    border-top: 1px solid #d7d6cd;
+    margin: 0 20px;
+    overflow: hidden;
+    padding: 23px 0;
+  }
+  #body div.footer img {
+    display: block;
+    float: left;
+  }
+  #body div.footer div {
+    float: right;
+    width: 540px;
+  }
+  #body div.footer div ol {
+    margin: 0;
+    padding: 20px 0 0 20px;
+  }
+  #body div.footer div ol li {
+    color: #4b4b4b;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  #body div.footer div ol li p {
+    font-weight: normal;
+    letter-spacing: 0.028em;
+    line-height: 24px;
+  }
+  #body div#content {
+    border-top: 1px solid #5d8546;
+    overflow: hidden;
+    padding: 35px 20px;
+  }
+  #body div#content h1 {
+    color: #818181;
+    font-size: 30px;
+    letter-spacing: 0.3em;
+    margin-top: auto;
+    text-transform: uppercase;
+  }
+  #body div#content h3 {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.028em;
+    line-height: 24px;
+    margin: 0;
+    padding: 30px 0 0;
+  }
+  #body div#content h3.first {
+    padding: 12px 0 0;
+  }
+  #body div#content p {
+    letter-spacing: 0.028em;
+    line-height: 24px;
+    padding: 25px 0 0;
+  }
+
+#footer p{
+  color: #ffffff;
+  height: 37px;
+  line-height: 37px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #8da181;
+}
+
+.fa-fw {
+      width: 1.48571429em;
+      text-align: left;
+  }
+
+
+  .button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button5:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+
+  input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    margin: 1em;
+  }
+
+  .name{
+    font-size: larger;
+  }
+
+  .img1{
+    width: 5%;
+  }
+  form {
+    display: block;
+    margin-top: 3.5em;
+}
+
+</style>
+
+
+<body>
+    <div id="page">
+        <div id="header">
+            <img src="http://sgw.bsphcl.co.in/cgrf/images/logo1.png" alt="Logo">
+        </div>    
+      
+        <div class="navbar">
+            <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a> 
+            <a class="active1" href="case"><i class="fa fa-fw fa-search"></i>Case Status</a> 
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-fw fa-envelope"></i>Contact
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="nbpdcl">NBPDCL</a>
+                    <a href="sbpdcl">SBPDCL</a>
+                </div>
+            </div>
+            <a class="active2" href="login1"><i class="fa fa-fw fa-user"></i>Login</a>
+        </div> 
+
+        <div id="body" style=" background-image:url(https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGxhaW4lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)">
+            <div id="content">
+                <img src="http://sgw.bsphcl.co.in/cgrf/assets/images/profile-image.png" alt="Consumer" class="img1">
+                <h1>CGRF CASE DETAILS</h1>
+                <form action="/action_page.php" method="get" id="nameform">
+                    <label for="fname" class="name">Enter Case Number:</label><br><br>
+                    <input type="text" name="search" placeholder="Search..">
+                  
+                    <button class="button button5" type="submit" value="Submit">Search</button>
+                </form>
+            </div>
+        </div>
+         <div id="footer">
+
+                    <p>
+                        Copyright © IT Dept., NBPDCL ,Patna
+                    </p>
+                </div>
+            </div>
+        
+        
+        
+        </body>
+        </html>

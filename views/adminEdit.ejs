@@ -1,0 +1,203 @@
+<%- include('partials/navbar')%>
+
+<link rel="stylesheet" href="../adminHome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <section>
+    <div class="form-title text-center">
+        <h2 class="text-dark">Update Employee Details</h2>
+        <h6>Use the form below to Update</h6>
+    </div>
+    <div>
+    <button class="button-54" role="button" onclick="location.href='/adminHome'">All Users</button>
+
+    <div class="container mt-0 card" id="contain">
+   
+
+
+        <form method="post" id="update_user" action="admin/editUser/<%=user._id%>">
+        
+        <div class="form-row pl-3 pt-3 pr-3">
+            <div class="form-group col-md-4">
+              <label for="empid">Employee ID</label>
+              <input type="text" class="form-control" name="empid" value="<%= user.empid%>" disabled>
+            </div>
+            <div class="form-group col-md-4 pl-3">
+              <label for="name">Full Name</label>
+              <input type="hidden" name="id"value="<%= user._id %>">
+              <input type="text" class="form-control" name="name" value="<%= user.name%>">
+          </div>
+    
+         <div class="form-group pl-4">
+            <label for="gender" class="text-light">Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %> >
+                <label for="radio-4" class="radio-label">Active</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">Inactive</label>
+            </div>
+         </div>
+         </div>
+            <div class="form-row pl-3">
+               <div class="form-group col-md-4">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" name="email" value="<%= user.email%>">
+               </div>
+               <div class="form-group col-md-4 pl-5">
+                <label for="gender" class="text-dark">Gender</label>
+                <div class="radio inline">
+                    <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
+                    <label for="radio-2" class="radio-label">Male</label>
+                </div>
+                <div class="radio inline">
+                    <input type="radio" id="radio-3" name="gender" value="Female"  <%= user.gender == 'Female' ? 'checked' : '' %> >
+                    <label for="radio-3" class="radio-label">Female</label>
+                </div>
+               </div>
+            </div>
+         <div class="form-row pl-3">
+         <div class="form-group col-md-5">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" name="address" value="<%= user.address%>">
+         </div>
+         <div class="form-group col-md-3">
+          <label for="inputAddress2">City/Town </label>
+          <input type="text" class="form-control" name="city" value="<%= user.city%>">
+         </div>
+         
+         <div class="form-group col-md-2">
+          <label for="company">Company</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="company">          
+            <option selected><%= user.company%></option>
+            <option value="NBPDCL" name="company">NBPDCL</option>
+            <option value="BSPHCL" name="company">BSPHCL</option>
+            <option value="SBPDCL" name="company">SBPDCL</option>
+            <option value="BSPTCL" name="company">BSPTCL</option>
+            <option value="BSPGCL" name="company">BSPGCL</option>
+          </select>
+         </div>
+           </div>
+         <div class="form-row pl-3">
+          <div class="form-group col-md-4">
+            <label for="inputAddress2">Phone Number</label>
+            <input type="text" class="form-control" name="number" value="<%= user.number%>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="department">Department</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="department">          
+                <option selected><%= user.department%></option>
+              <option value="IT Cell">IT Cell</option>
+              <option value="Human Resource and Administration">Human Resource and Administration</option>
+              <option value="Data Center">Data Center</option>
+              <option value="CGRF">CGRF</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group pl-3">
+    
+        <button type="submit" class="btn btn-primary" id="update" onclick="return alert('Employee Updated Successfully')">Save</button>
+      </form>
+    </div>
+    
+  
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+        
+   </section>
+   
+  
+  <%- include('partials/footer')%>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+
+
+h2 {
+    margin: 0.6em;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1;
+    color: inherit;
+    
+}
+
+a {
+    color: #101112ce;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 65%;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 6rem;
+    
+}
+
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .button-54 {
+        padding: 0.25em 0.75em;
+        margin-bottom: 15px;
+    }
+}
+#contain{
+    width: 80em;
+    zoom: 1.15;
+
+}
+body{
+    background-image: url(https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+
+}   
+
+.card {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    width: auto;
+    height: auto;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.738);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    margin-bottom: 30px;
+}
+  </style>
